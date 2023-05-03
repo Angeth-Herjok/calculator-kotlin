@@ -11,10 +11,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         addNumbers()
         subNumbers()
         multiplyNumbers()
-        divNumbers()
+        modulusNum()
 
         }
 
@@ -53,14 +54,14 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun divNumbers(){
-        var divNum1=findViewById<EditText>(R.id.number1)
-        var divNum2=findViewById<EditText>(R.id.number2)
+    fun modulusNum(){
+        var modulusNum1=findViewById<EditText>(R.id.number1)
+        var modulusNum2=findViewById<EditText>(R.id.number2)
         var button4=findViewById<Button>(R.id.btn_div)
         button4.setOnClickListener {
-            var divisionNum1=divNum1.text.toString().toInt()
-            var divisionNum2=divNum2.text.toString().toInt()
-            var dividend=divisionNum1/divisionNum2
+            var modulusNum1=modulusNum1.text.toString().toInt()
+            var modulusNum2=modulusNum2.text.toString().toInt()
+            var dividend=modulusNum1%modulusNum2
             Toast.makeText(this,"$dividend",Toast.LENGTH_SHORT).show()
         }
     }
